@@ -1,0 +1,135 @@
+// Import Partials
+
+
+
+@import 'partials/animations';
+@import 'partials/buttons';
+@import 'partials/mixins';
+@import 'partials/spacing';
+@import 'partials/variables';
+
+
+
+// Styles
+body {
+  margin: 0;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  background-color: $bg-grid;
+  color: $color-text;
+}
+
+header {
+  width: 100%;
+  background-color: $color-btn-1;
+  padding: 20px 0;
+  background-color: #640FC5;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+
+    .logo {
+      font-size: $font-size-large;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+
+      li {
+        a {
+          color: $color-text;
+          text-decoration: none;
+          font-size: $font-size-medium;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  background-color: $bg-hero;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    max-width: 600px;
+
+    h1 {
+      @include title-big;
+      margin-bottom: 20px;
+      @include animations('fadeInDown1', 0.5s, -20px, 0, 0s);
+    }
+
+    p {
+      font-size: $font-size-medium;
+      margin-bottom: 20px;
+      @include animations('fadeInDown2', 0.5s, -20px, 0, 0.2s);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+
+      button {
+        @include animations('fadeInDown3', 0.5s, -20px, 0, 0.4s);
+      }
+    }
+  }
+
+  .hero-image {
+    max-width: 50%;
+    @include floating(10px, 0 4px 6px rgba(0, 0, 0, 0.1), 2px solid #ddd);
+    @include animations('fadeInDown4', 0.5s, -20px, 0, 0.6s);
+  }
+}
+
+.grid {
+  @include grid(4);
+  padding: 20px;
+  background-color: $bg-grid;
+
+  .grid-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    width: 300px;  /* Adjust these values to match the exact size in the mockup */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+
+    .grid-image {
+      width: 100%;
+      height: auto;
+      @include floating(10px, 0 6px 8px rgba(0, 0, 0, 0.15), none);
+
+   
+    }
+  }
+}
+
+
+
+.grid-item img {
+  width: 300px;  /* Adjust these values to match the exact size in the mockup */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+

@@ -1,0 +1,21 @@
+@mixin title-big {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+@mixin floating($border-radius: 10px, $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), $border: none) {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: $border;
+}
+
+@mixin grid($items-per-line: 4) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  > * {
+    flex: 1 1 calc(100% / #{$items-per-line} - 10px);
+  }
+}
+

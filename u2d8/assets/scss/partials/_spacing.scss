@@ -1,0 +1,34 @@
+// Spacing Variables
+$spacing-sm: 8px;
+$spacing-normal: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+$spacing-xxl: 48px;
+
+$spacing-sizes: (
+  sm: $spacing-sm,
+  normal: $spacing-normal,
+  md: $spacing-md,
+  lg: $spacing-lg,
+  xl: $spacing-xl,
+  xxl: $spacing-xxl
+);
+
+@each $size-name, $size-value in $spacing-sizes {
+  .padding-block-#{$size-name} {
+    padding-block: $size-value;
+  }
+
+  .padding-inline-#{$size-name} {
+    padding-inline: $size-value;
+  }
+
+  .margin-block-#{$size-name} {
+    margin-block: $size-value;
+  }
+
+  .margin-inline-#{$size-name} {
+    margin-inline: $size-value;
+  }
+}

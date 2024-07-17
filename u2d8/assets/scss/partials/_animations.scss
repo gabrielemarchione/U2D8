@@ -1,0 +1,14 @@
+@mixin animations($name, $duration: 0.5s, $start: -20px, $end: 0, $delay: 0s) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateY(#{$start});
+    }
+    to {
+      opacity: 1;
+      transform: translateY(#{$end});
+    }
+  }
+
+  animation: #{$name} $duration ease $delay both;
+}
